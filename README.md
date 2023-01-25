@@ -36,21 +36,19 @@ Will fill in later
 As a user I want to....
 
 1. Login to account
-    - Create a database to store collections. Create a user model with validation/authentication methods. If user fields pass validation, grant access to site
+    - Have sign-in fields for username/email and password
 2. See Account info
-    - On validation, user will see their current workouts (if existant), option to create workout, and option to see excercise list
+    - On validation, user will see their homepage containing current workouts (if existant), option to create workout, and option to see excercise list
 3. Select option to start new workout-plan
-    - A new workout model will be created for each newly created workout
-    - Each workout will contain an excercise model with a many to many relationship. Each workout-plan can have many excercises and each excercise can, and will, 
-        be associated with many workout-plans
     - Form fields to add excercise type, excercise name, reps, sets, duration, date
     - Option to edit, delete, and create new workout-plan
     - Post newly created fields to the page and save to database for user's account
-5. Select option to see all workout-plans
+4. Select option to see all workout-plans
     - See user's previous workouts
-        Database to store collection called 'workouts' that on submit, are stored to the collection associated with the user's account
-    - Options to edit, delete, or create new workouts
+    - Database to store collection called 'workouts' that on submit, are stored to the collection associated with the user's account
     - Workouts populate on user's screen on page load after authentication
+5. Select options to add, delete, or update an excercise
+    - A form field where users can input a new excercise and choose to add it to an existing workout plan
 6. Option to login, create a new account, see workouts, excercises, and excercise list at top
 
  
@@ -66,7 +64,8 @@ As a user I want to....
 ### Ver.2
 
 - See workout library
-    - Drop down list of excersices separated by category: strength-training, cardio, etc.
+- Description of excersices once the user begins to input information in the form fields
+- Drop down list of excersices separated by category: strength-training, cardio, etc.
 - User profile picture
 
 ### Ver.3
