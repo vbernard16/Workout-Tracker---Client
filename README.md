@@ -1,4 +1,4 @@
-# Workout Tracker
+# Workout-Tracker---Client
 
 ## Description
 
@@ -72,4 +72,3 @@ As a user I want to....
 - Api inclusion
 - Description of each excercise
 - Search bar the uses api to find the excercise that is typed in# Workout-Tracker
-# Workout-Tracker---Client
