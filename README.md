@@ -22,11 +22,18 @@ Will fill in later
 ### Workout Planner 
 ![Workout Page](planning/wireframes/workout-planner-page.png)
 
-## ERD :
+## ERD 
 
 ### Models: User, Workout, Excercise
 
-![ERD](planning/erd/erd.png)
+### User---Workout
+![ERD](planning/erd/user-workout-erd.png)
+
+### User---Excercise
+![ERD](planning/erd/user-excercise-erd.png)
+
+### Workout---Excercise
+![ERD](planning/erd/workout-excersice-erd.png)
 
 
 ## User Stories
@@ -47,7 +54,7 @@ As a user I want to....
     - See user's previous workouts
     - Database to store collection called 'workouts' that on submit, are stored to the collection associated with the user's account
     - Workouts populate on user's screen on page load after authentication
-5. Select options to add, delete, or update an excercise
+5. Select options to add and create an excercise
     - A form field where users can input a new excercise and choose to add it to an existing workout plan
 6. Option to login, create a new account, see workouts, excercises, and excercise list at top
 
@@ -64,6 +71,7 @@ As a user I want to....
 ### Ver.2
 
 - See workout library
+- Optional admin privilages that allow an admin to delete an excercise that the user has added to the database
 - Description of excersices once the user begins to input information in the form fields
 - Drop down list of excersices separated by category: strength-training, cardio, etc.
 - User profile picture
