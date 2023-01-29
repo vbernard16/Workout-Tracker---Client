@@ -23,7 +23,9 @@ import { store } from "./store.js"
             onIndexWorkoutSuccess,
             onUpdateRoutineSuccess,
             onAddRoutineSuccess,
-            onFailure
+            onFailure,
+            onCreateNewWorkout,
+            onCreateNewWorkoutSuccess
          } from "./ui.js"
     
 
@@ -36,9 +38,10 @@ import { store } from "./store.js"
     const workoutContainer = document.querySelector('#workout-container')
     const createWorkoutContainer = document.querySelector('#create-workout-container')
     const excerciseContainer = document.querySelector('#excercise-container')
+    const createWorkoutForm = document.querySelector('#create-workout-form')
     const signInBtn = document.querySelector('#sign-in-btn')
     const signUpBtn = document.querySelector('#sign-up-btn')
-    // const routineContainer = document.querySelector('#test')
+
   
 
 
@@ -55,7 +58,7 @@ signUpContainer.addEventListener('submit', (event) => {
     signUpUser(formattedData)
         .then(res => res.json())
         .then(onSignUpSuccess)
-        // .then(onUserSignUpSuccess)
+
 })
 
 
@@ -73,8 +76,6 @@ signInContainer.addEventListener('submit', (event) => {
         .then(indexWorkout)
             .then((res) => res.json())
             .then((res) => onIndexWorkoutSuccess(res.workout))
-        // .then(indexWorkout())
-        //     .then(res => onUserSignInSuccess(res))
            
 })
 
@@ -114,7 +115,6 @@ workoutContainer.addEventListener('submit', (event) => {
     const excerciseReps = event.target.reps.value
     const excerciseSets = event.target.sets.value
 
-    console.log(`workoutId: ${workoutId}`)
 
     const excerciseInputData = {routine: {
         name: excerciseName,
@@ -131,21 +131,26 @@ workoutContainer.addEventListener('submit', (event) => {
 
 })
 
-workoutContainer.addEventListener('click', (event) => {
+createWorkoutForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    const workoutName = event.target.value
-    const workoutDaysofWeek = event.target.value
+    const workoutName = event.target.workoutName.value
+    const workoutDaysOfWeek = event.target.dayOfWeek.value
 
     const workoutInputData = {workout: {
         name: workoutName,
-        days: workoutDaysofWeek
+        days: workoutDaysOfWeek
     }
 }
-console.log(workoutInputData)
     createWorkout(workoutInputData)
+        .then((res) => res.json())
+        .then((res) => {
+            onCreateNewWorkoutSuccess(res.workout)
+        })
 
 })
+
+
 
 // routineContainer.addEventListener('click', (event) => {
 //     event.preventDefault()

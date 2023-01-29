@@ -9,11 +9,11 @@ const signInForm = document.querySelector('#sign-in-form')
 const routineContainer = document.querySelector('.routine-container')
 const createWorkoutForm = document.querySelector('#create-workout-form')
 const profileHeader = document.querySelector('#profile-header')
+const createWorkoutContainer = document.querySelector('#create-workout-container')
 import { store } from "./store.js"
 
-import { updateRoutine, deleteRoutine } from "./api.js"
+import { updateRoutine, deleteRoutine, deleteWorkout } from "./api.js"
 
-import { indexWorkout } from "./api.js"
 
 export const onExcerciseButtonClick = () => {
     
@@ -22,7 +22,6 @@ export const onExcerciseButtonClick = () => {
 
 export const onIndexExcerciseSuccess = (excercise) => {
     excercise.forEach((excercise) => {
-        // console.log(excercise.name)
         const excerciseDiv = document.createElement('div')
         excerciseDiv.innerHTML = `
         <h3>Excercise: ${excercise.name} </h3>`
@@ -45,6 +44,7 @@ export const onFailure = (error) => {
 export const onSignInSuccess = (userToken) => {
     signInForm.classList.add('hidden')
     signUpContainer.classList.add('hidden')
+    createWorkoutContainer.classList.add('show')
     profileHeader.innerHTML= `<h1>Welcome</h1>`
     store.userToken = userToken
 }
@@ -78,6 +78,7 @@ export const onCreateNewWorkout =(workout) => {
 export const onIndexWorkoutSuccess = (workout) => {
     workout.forEach((workout) => {
         const workoutDiv = document.createElement('div')
+        workoutDiv.classList.add('show-border')
         const excercise = workout.routines
         workoutDiv.innerHTML = `
         <h2>${workout.name} (${workout.day})</h2>
@@ -90,10 +91,30 @@ export const onIndexWorkoutSuccess = (workout) => {
                 <input id="${excercise._id}-btn" name="${excercise.name}-form-submit"  type="submit" value="Add new excercise"/>
         </form>
         
-        <input type="submit" class="delete-workout-btn" name="workout-delete" value="Remove Workout">
+        <button id="${workout._id}-delete-btn" type="submit">delete workout</button>
         <input type="submit" class="edit-workout-btn" name="workout-edit" value="Edit Workout">
         `
+       
+
         workoutContainer.append(workoutDiv)
+
+        
+        workoutContainer.addEventListener('submit', (event) => {
+            event.preventDefault()
+            console.log('a button was clicked')
+            // const id = event.target.getAttribute('workoutId')
+            
+            // if(!id) return
+
+            // console.log(event.target.value)
+            // console.log(id)
+                // deleteWorkout(id)
+                //     .then((res) => console.log(res))
+                //     .then(onDeleteWorkoutSuccess)
+                //     .catch(onFailure)
+        })
+
+
         const routines = workout.routines
          routines.forEach((routine) => {
             const routineDiv = document.createElement('div')
@@ -110,15 +131,15 @@ export const onIndexWorkoutSuccess = (workout) => {
             </form>
                 <button data-id="${routine._id}" type="button" class="btn">delete</button>
             `
-            routineDiv.addEventListener('click', (event) => {
-                event.preventDefault()
-                const id = event.target.getAttribute('data-id')
+            // routineDiv.addEventListener('click', (event) => {
+            //     event.preventDefault()
+            //     const id = event.target.getAttribute('data-id')
 
-                if (!id) return
+            //     if (!id) return
 
-                deleteRoutine(id)
+            //     // deleteRoutine(id)
 
-            })
+            // })
 
             routineDiv.addEventListener('submit', (event) => {  
                 event.preventDefault()
@@ -142,6 +163,8 @@ export const onIndexWorkoutSuccess = (workout) => {
                     .catch(onFailure)
             
             
+                    
+
             })
             routineContainer.append(routineDiv)
         
@@ -149,9 +172,21 @@ export const onIndexWorkoutSuccess = (workout) => {
     })
 }
 
+export const onCreateNewWorkoutSuccess = (workoutInput) => {
+    messageContainer.innerHTML = `Added new workout`
+    const workoutDiv = document.createElement('div')
+    workoutDiv.innerHTML = `
+        <h2>Workout: ${workoutInput.name} (${workoutInput.days})<h2/>
+    `
+    workoutContainer.append(workoutDiv)
+}
 
 export const onAddRoutineSuccess = () => {
     messageContainer.innerHTML = `Added new excercise`
+}
+
+export const onDeleteWorkoutSuccess = () => {
+    messageContainer.innerHTML = `Successfully deleted workout`
 }
 
 // onUserCreateExcercise

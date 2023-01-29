@@ -8,6 +8,10 @@ body{
     background-image: -webkit-linear-gradient(180deg, white  50%, #CDFCF6  50%);
 }
 
+.show{
+    display: block;
+}
+
 .hidden{
     display: none;
 }
@@ -110,10 +114,14 @@ sign-in-form{
     justify-content: space-around;
 }
 
-/* .excercise-btn{
-    border: 8px solid yellow;
-} */
-
 .routine-div{
     display: flex;
+}
+
+#create-workout-container{
+    /* display: none; */
+}
+
+.show-border{
+    border: 2px solid blue;
 }
