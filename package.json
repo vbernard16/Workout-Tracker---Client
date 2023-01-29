@@ -1,0 +1,19 @@
+{
+  "name": "project-2-client",
+  "version": "1.0.0",
+  "description": "client side ",
+  "main": "events.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbernard16/Workout-Tracker---Client.git"
+  },
+  "author": "Vaughn Bernard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vbernard16/Workout-Tracker---Client/issues"
+  },
+  "homepage": "https://github.com/vbernard16/Workout-Tracker---Client#readme"
+}

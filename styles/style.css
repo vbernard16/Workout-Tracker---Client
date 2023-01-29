@@ -1,0 +1,119 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Andika', sans-serif;
+    background-image: -webkit-linear-gradient(180deg, white  50%, #CDFCF6  50%);
+}
+
+.hidden{
+    display: none;
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+#sign-in-title{
+    text-align: center;
+}
+
+#sign-in-form{
+    padding: 2em;
+}
+#sign-in-container{
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  align-items: flex-start;
+}
+sign-in-form{
+    
+}
+.username-sign-in{
+    text-align: center;
+    font-size: 1.75rem;
+     display: block;
+     margin: 0 auto;
+     padding: 0.5em;
+}
+.password-sign-in{
+    font-size: 1.75rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 0.5em;
+}
+
+#sign-in-btn{
+    display: block;
+    margin: 0 auto;
+    font-size: 2rem;
+    margin-top: 2em;
+    
+}
+
+.em-div{
+    text-align: center;
+    padding: 1em;
+    
+}
+#sign-up-title{
+    text-align: center;
+}
+
+#sign-up-container{
+    padding: 2em;
+}
+
+.username-sign-up{
+    text-align: center;
+    font-size: 1.75rem;
+     display: block;
+     margin: 0 auto;
+     padding: 0.5em;
+}
+
+.password-sign-up{
+    font-size: 1.75rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 0.5em;
+}
+
+.password-confirmation{
+    font-size: 1.75rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 0.5em;
+}
+
+#sign-up-btn{
+    display: block;
+    margin: 0 auto;
+    font-size: 2rem;
+    margin-top: 2em;
+}
+
+#excercise-container{
+    border: 2px solid black;
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+}
+
+/* .excercise-btn{
+    border: 8px solid yellow;
+} */
+
+.routine-div{
+    display: flex;
+}
