@@ -101,7 +101,8 @@ export const addRoutine = (data) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${store.userToken}`
-        }
+        },
+        body: JSON.stringify(data)
     })
 }
 
@@ -112,7 +113,8 @@ export const updateRoutine = (data, id) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${store.userToken}`
-        }
+        },
+        body: JSON.stringify(data)
     })
 }
 

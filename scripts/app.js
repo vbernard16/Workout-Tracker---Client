@@ -22,6 +22,7 @@ import { store } from "./store.js"
             onIndexExcerciseSuccess,
             onIndexWorkoutSuccess,
             onUpdateRoutineSuccess,
+            onAddRoutineSuccess,
             onFailure
          } from "./ui.js"
     
@@ -37,13 +38,9 @@ import { store } from "./store.js"
     const excerciseContainer = document.querySelector('#excercise-container')
     const signInBtn = document.querySelector('#sign-in-btn')
     const signUpBtn = document.querySelector('#sign-up-btn')
-    const routineContainer = document.querySelector('.routine-container')
-    
+    // const routineContainer = document.querySelector('#test')
   
-// handle user sign in
-// signUpContainer.addEventListener('submit', (event) => {
-//     console.log(event)
-// })
+
 
 signUpContainer.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -81,39 +78,88 @@ signInContainer.addEventListener('submit', (event) => {
            
 })
 
-routineContainer.addEventListener('submit', (event) => {
+// routineContainer.addEventListener('submit', (event) => {
+//     console.log(event)
+//     event.preventDefault()
+//     const id = event.target.getAttribute('data-id')
+
+//     if (!id) return
+
+//     const repsField = event.target.reps.value
+//     const setsField = event.target.sets.value
+//     const workoutIdField = event.target.workoutId.value
+
+//     const routineData = {routine: {
+//         reps: repsField,
+//         sets: setsField,
+//         workoutId: workoutIdField,
+//     }
+// }
+
+//     updateRoutine(routineData, id)
+//         .then(onUpdateRoutineSuccess)
+//         .catch(onFailure)
+
+
+// })
+
+
+workoutContainer.addEventListener('submit', (event) => {
     event.preventDefault()
-    const id = event.target.getAttribute('id')
-    const repsField = event.target.reps.value
-    const setsField = event.target.sets.value
-    const typeField = event.target.type.value
-    const workoutId = event.target.workoutId.value
-    console.log(`btn id: ${id}`)
+    const workoutId = event.target.getAttribute('workoutId')
+
+    if (!workoutId) return
+
+    const excerciseName = event.target.name.value
+    const excerciseReps = event.target.reps.value
+    const excerciseSets = event.target.sets.value
 
     console.log(`workoutId: ${workoutId}`)
-    const routineData = {
-        reps: repsField,
-        sets: setsField,
-        type: typeField,
-        workoutId: workoutId
+
+    const excerciseInputData = {routine: {
+        name: excerciseName,
+        reps: excerciseReps,
+        sets: excerciseSets,
+        workoutId: workoutId,
     }
+}
 
-    console.log(routineData)
 
-    updateRoutine(routineData, id)
-        .then(onUpdateRoutineSuccess)
-        .catch(onFailure)
-
+ addRoutine(excerciseInputData)
+    .then(console.log(excerciseInputData))
+    .then(onAddRoutineSuccess)
 
 })
-
 
 workoutContainer.addEventListener('click', (event) => {
-    const id = event.target.getAttribute('data-id')
-   
- 
+    event.preventDefault()
+
+    const workoutName = event.target.value
+    const workoutDaysofWeek = event.target.value
+
+    const workoutInputData = {workout: {
+        name: workoutName,
+        days: workoutDaysofWeek
+    }
+}
+console.log(workoutInputData)
+    createWorkout(workoutInputData)
+
 })
 
+// routineContainer.addEventListener('click', (event) => {
+//     event.preventDefault()
+//     const routineId = event.target.getAttribute('deleteId')
+//     console.log(routineId)
+//     if(!routineId) return
+
+//     if(event.target.attribute === 'deleteId'){
+//         console.log(`delete button was clicked`)
+//     }else{
+//         console.log(`delete button was not clicked`)
+//     }
+
+// })
 
 // export const createNewWorkouts = (data) => {
 
