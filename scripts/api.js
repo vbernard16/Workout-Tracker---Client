@@ -95,7 +95,7 @@ export const createExcercise = (data) => {
 }
 
 export const addRoutine = (data) => {
-    return fetch(`http://localhost:3000/routines`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/routines`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -107,7 +107,7 @@ export const addRoutine = (data) => {
 }
 
 export const updateRoutine = (data, id) => {
-    return fetch(`http://localhost:3000/routines/${id}`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/routines/${id}`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json',
@@ -119,7 +119,7 @@ export const updateRoutine = (data, id) => {
 }
 
 export const deleteRoutine = (id) => {
-    return fetch(`http://localhost:3000/routines/${id}`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/routines/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${store.userToken}`
