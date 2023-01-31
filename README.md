@@ -14,7 +14,9 @@ So click the link in the "Getting Started" section below, sign up and get your f
 
 ## How to run
 
-Will fill in later
+To get started, click [this]https://vbernard16.github.io/Workout-Tracker---Client/) link. You'll be taken to the sign-in/sign-up page. Once you create an account, sign in using your account info.
+
+Once you're logged in, you're ready to begin your fitness journey.
 
 
 ### Sign Up/ Sign In 
@@ -23,7 +25,8 @@ Will fill in later
 ### User Homepage
 ![Homepage](/sceenshots/profile-page.png)
 
-
+### Sign Up Success
+![Sign up success](/sceenshots/sign-up-success-page.png)
  
 ## Technologies Used
 - Mongoose
