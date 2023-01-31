@@ -18,6 +18,7 @@ To get started, click [this]https://vbernard16.github.io/Workout-Tracker---Clien
 
 Once you're logged in, you're ready to begin your fitness journey.
 
+## Screenshots
 
 ### Sign Up/ Sign In 
 ![Sign Up](/sceenshots/sign-in-page.png)
