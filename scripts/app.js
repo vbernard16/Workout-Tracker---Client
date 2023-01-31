@@ -1,4 +1,4 @@
-// import api functions
+
 import { indexWorkout,
         signInUser,
         signUpUser,
@@ -12,21 +12,21 @@ import { indexWorkout,
         updateRoutine,
         addRoutine,
         deleteRoutine
-    } from "./api.js"
-    
-import { store } from "./store.js"
-// import ui funcitons
+    } 
+from "./api.js" 
 
-    import { onSignInSuccess,
-            onSignUpSuccess,
-            onIndexExcerciseSuccess,
-            onIndexWorkoutSuccess,
-            onUpdateRoutineSuccess,
-            onAddRoutineSuccess,
-            onFailure,
-            onCreateNewWorkout,
-            onCreateNewWorkoutSuccess
-         } from "./ui.js"
+import { onSignInSuccess,
+        onSignUpSuccess,
+        onIndexExcerciseSuccess,
+        onIndexWorkoutSuccess,
+        onUpdateRoutineSuccess,
+        onAddRoutineSuccess,
+        onFailure,
+        onCreateNewWorkout,
+        onCreateNewWorkoutSuccess,
+        onDeleteWorkoutSuccess
+         } 
+from "./ui.js"
     
 
     const messageContainer = document.querySelector('#message-container')
@@ -44,7 +44,6 @@ import { store } from "./store.js"
 
   
 
-
 signUpContainer.addEventListener('submit', (event) => {
     event.preventDefault()
     const formFieldUsername = event.target.username.value
@@ -58,7 +57,7 @@ signUpContainer.addEventListener('submit', (event) => {
     signUpUser(formattedData)
         .then(res => res.json())
         .then(onSignUpSuccess)
-
+    
 })
 
 
@@ -76,37 +75,13 @@ signInContainer.addEventListener('submit', (event) => {
         .then(indexWorkout)
             .then((res) => res.json())
             .then((res) => onIndexWorkoutSuccess(res.workout))
-           
 })
 
-// routineContainer.addEventListener('submit', (event) => {
-//     console.log(event)
-//     event.preventDefault()
-//     const id = event.target.getAttribute('data-id')
-
-//     if (!id) return
-
-//     const repsField = event.target.reps.value
-//     const setsField = event.target.sets.value
-//     const workoutIdField = event.target.workoutId.value
-
-//     const routineData = {routine: {
-//         reps: repsField,
-//         sets: setsField,
-//         workoutId: workoutIdField,
-//     }
-// }
-
-//     updateRoutine(routineData, id)
-//         .then(onUpdateRoutineSuccess)
-//         .catch(onFailure)
-
-
-// })
 
 
 workoutContainer.addEventListener('submit', (event) => {
     event.preventDefault()
+
     const workoutId = event.target.getAttribute('workoutId')
 
     if (!workoutId) return
@@ -114,7 +89,6 @@ workoutContainer.addEventListener('submit', (event) => {
     const excerciseName = event.target.name.value
     const excerciseReps = event.target.reps.value
     const excerciseSets = event.target.sets.value
-
 
     const excerciseInputData = {routine: {
         name: excerciseName,
@@ -124,22 +98,17 @@ workoutContainer.addEventListener('submit', (event) => {
     }
 }
 
-
  addRoutine(excerciseInputData)
-    .then(console.log(excerciseInputData))
     .then(onAddRoutineSuccess)
-
 })
 
 createWorkoutForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
     const workoutName = event.target.workoutName.value
-    const workoutDaysOfWeek = event.target.dayOfWeek.value
 
     const workoutInputData = {workout: {
         name: workoutName,
-        days: workoutDaysOfWeek
     }
 }
     createWorkout(workoutInputData)
@@ -147,73 +116,9 @@ createWorkoutForm.addEventListener('submit', (event) => {
         .then((res) => {
             onCreateNewWorkoutSuccess(res.workout)
         })
-
 })
 
 
 
-// routineContainer.addEventListener('click', (event) => {
-//     event.preventDefault()
-//     const routineId = event.target.getAttribute('deleteId')
-//     console.log(routineId)
-//     if(!routineId) return
 
-//     if(event.target.attribute === 'deleteId'){
-//         console.log(`delete button was clicked`)
-//     }else{
-//         console.log(`delete button was not clicked`)
-//     }
-
-// })
-
-// export const createNewWorkouts = (data) => {
-
-// }
-
-
-// export const indexWorkouts = (data) => {
-//     indexWorkout()
-//         .then((res => console.log(res)))
-
-// }
-
-
-
-// export const indexExcercises = (event) => {
-//     event.preventDefault()
-//     console.log(event.target)
-//     // const excercise = event.target.
-
-
-
-
-// USER CRUD
-
-// signInUser(signInData)
-//     .then(res => res.json())
-//     .then(res => {
-//         onUserSignIn(res)
-//     })
-
-
-
-
-// EXCERCISE CRUD
-
-// indexExcercise()
-//     .then(res => res.json())
-//     .then(res => {
-//         onIndexExcerciseSuccess(res.excercise)
-//     })
-
-
-
-// WORKOUT CRUD
-
-// indexWorkout()
-//     .then(res => res.json())
-//     .then((res) => {
-//         onIndexWorkoutSuccess(res.workout)
-//     })
-   
 

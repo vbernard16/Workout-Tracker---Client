@@ -4,8 +4,95 @@
 
 body{
     margin: 0;
-    font-family: 'Andika', sans-serif;
-    background-image: -webkit-linear-gradient(180deg, white  50%, #CDFCF6  50%);
+    font-family: 'Montserrat', sans-serif;
+    /* background: url('/workout-img.jpg'); */
+}
+
+.btn-sm{
+     /* padding: 0.5em; */
+     margin-top: 0.75em;  
+}
+
+header{
+    background-color: rgb(82, 202, 250);
+    padding: 1.5em;
+}
+
+li{
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+ul{
+    display: flex;
+    margin:0 2%;
+    /* gap: 100px; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-links{
+    display: flex;
+    margin-right: 10%;
+    gap: 50px;
+}
+
+
+input{
+    /* font-family: 'Andika', sans-serif;  */
+    padding: 0.75em;
+    border-radius: 10px;
+    margin-bottom: 0.75em;
+}
+
+button{
+ /* font-family: 'Andika', sans-serif;  */
+ padding: 0.5em;
+ border-radius: 10px;
+ margin-bottom: 0.75em;
+}
+
+input:hover{
+    background-color: rgb(82, 202, 250);
+}
+
+#main{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.w3-input{
+    margin-bottom: 0.75em;
+}
+
+
+#workout-container{
+    /* display: flex;
+    gap: 200px; */
+    /* border: 4px solid red; */
+}
+
+.routine-container{
+    /* display: block; */
+    /* border: 4px solid yellow; */
+}
+
+.workout-container-div{
+    border: 2px solid yellow;
+}
+
+.workoutHeaderDiv{
+    margin-top: 2em;
+    border-top: 4px solid black;
+}
+
+.workoutDiv{
+    margin-top: 2em;
+}
+
+.routine-div{
+    padding: 1em;
+    /* border: 4px solid green; */
 }
 
 .show{
@@ -108,7 +195,6 @@ sign-in-form{
 }
 
 #excercise-container{
-    border: 2px solid black;
     display: flex;
     gap: 50px;
     justify-content: space-around;
@@ -120,8 +206,4 @@ sign-in-form{
 
 #create-workout-container{
     /* display: none; */
-}
-
-.show-border{
-    border: 2px solid blue;
 }

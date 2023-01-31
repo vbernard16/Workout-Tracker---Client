@@ -2,7 +2,7 @@
 import { store } from "./store.js"
 
 export const indexWorkout = () => {
-     return fetch(`http://localhost:3000/workouts`, {
+     return fetch(`https://afternoon-caverns-57641.herokuapp.com/workouts`, {
         headers: {
             'Authorization': `Bearer ${store.userToken}`
         }
@@ -10,11 +10,11 @@ export const indexWorkout = () => {
 }
 
 export const findWorkout = (id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`)
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/workouts/${id}`)
 }
 
 export const createWorkout = (data) => {
-    return fetch(`http://localhost:3000/workouts`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/workouts`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -26,7 +26,7 @@ export const createWorkout = (data) => {
 }
 
 export const updateWorkout = (data, id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/workouts/${id}`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json',
@@ -38,7 +38,7 @@ export const updateWorkout = (data, id) => {
 }
 
 export const deleteWorkout = (id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/workouts/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${store.userToken}`
@@ -51,7 +51,7 @@ export const deleteWorkout = (id) => {
 // User api's
 
 export const signUpUser = (data) => {
-    return fetch(`http://localhost:3000/sign-up`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/sign-up`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -62,7 +62,7 @@ export const signUpUser = (data) => {
 }
 
 export const signInUser = (data) => {
-    return fetch(`http://localhost:3000/sign-in`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/sign-in`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -72,18 +72,18 @@ export const signInUser = (data) => {
     })
 }
 
-// excercise api's
+
 
 export const indexExcercise = () => {
-    return fetch(`http://localhost:3000/excercises`)
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/excercises`)
 }
 
 export const findExcercise = () => {
-    return fetch(`http://localhost:3000/excercises`)
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/excercises`)
 }
 
 export const createExcercise = (data) => {
-    return fetch(`http://localhost:3000/excercises`, {
+    return fetch(`https://afternoon-caverns-57641.herokuapp.com/excercises`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
