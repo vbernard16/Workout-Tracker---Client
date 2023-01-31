@@ -1,3 +1,7 @@
+import { store } from "./store.js"
+import { updateRoutine, deleteWorkout, updateWorkout } from "./api.js"
+
+
 const profileContainer = document.querySelector('#profile-container')
 const header = document.querySelector('#header')
 const signUpContainer = document.querySelector('#sign-up-container')
@@ -7,11 +11,8 @@ const workoutContainer = document.querySelector('#workout-container')
 const messageContainer = document.querySelector('#message-container')
 const signInForm = document.querySelector('#sign-in-form')
 const routineContainer = document.querySelector('.routine-container')
-const profileHeader = document.querySelector('#profile-header')
 const createWorkoutContainer = document.querySelector('#create-workout-container')
-import { store } from "./store.js"
 
-import { updateRoutine, deleteWorkout, updateWorkout } from "./api.js"
 
 export const onIndexExcerciseSuccess = (excercise) => {
     excercise.forEach((excercise) => {
@@ -21,7 +22,6 @@ export const onIndexExcerciseSuccess = (excercise) => {
         excerciseContainer.append(excerciseDiv)
     })
 }
-
 
 export const onUpdateRoutineSuccess = () => {
     messageContainer.innerHTML = 'Successfully updated routine'
@@ -53,7 +53,6 @@ export const onSignUpSuccess = () => {
         <h1>Welcome! Click below to sign into your account</h1>
         <a href="index.html"><button id="sign-in-redirect-btn" type="button">Sign In</button></a>
     `
-
 } 
 
 export const onCreateNewWorkout =(workout) => {
@@ -181,9 +180,7 @@ export const onIndexWorkoutSuccess = (workout) => {
           
         })
 
-
             workoutHeaderDiv.addEventListener('click', (event) => {
-                console.log(event.target.value)
                 event.preventDefault()
                 event.stopPropagation()
 
@@ -191,31 +188,31 @@ export const onIndexWorkoutSuccess = (workout) => {
                 if(!id) return
 
                 const nameField = event.target.value
-       
-
-            const workoutInputData = {workout: {
-                name: nameField
-            }
-        }
-        updateWorkout(workoutInputData, id)
-            .then(onUpdateWorkoutSuccess)
-            .catch(onFailure)
-    })
-       
-        const deleteBtn = document.querySelector(`#delete-btn`)
-        deleteBtn.addEventListener('click', (event) => {
-            event.preventDefault()
-            event.stopPropagation()
-            const id = event.target.getAttribute('data-id')
-
-            if(!id) return
-
-                deleteWorkout(id)
-                    .then(onDeleteWorkoutSuccess)
+                
+                const workoutInputData = {workout: {
+                    name: nameField
+                }
+                }
+                updateWorkout(workoutInputData, id)
+                    .then(onUpdateWorkoutSuccess)
                     .catch(onFailure)
-        })
-    })
-}
+                })
+                
+            const deleteBtn = document.querySelector(`#delete-btn`)
+            deleteBtn.addEventListener('click', (event) => {
+                event.preventDefault()
+                event.stopPropagation()
+                const id = event.target.getAttribute('data-id')
+
+                if(!id) return
+
+                    deleteWorkout(id)
+                        .then(onDeleteWorkoutSuccess)
+                        .catch(onFailure)
+                    })
+                })
+            }
+
 
 export const onCreateNewWorkoutSuccess = (workoutInput) => {
     messageContainer.innerHTML = `Added new workout`
