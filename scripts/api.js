@@ -2,15 +2,15 @@
 import { store } from "./store.js"
 
 export const indexWorkout = () => {
-     return fetch(`http://localhost:3000/workouts`, {
+     return fetch(`http://localhost:3000/workouts`, { // extra space 
         headers: {
             'Authorization': `Bearer ${store.userToken}`
         }
-     })
+     })// extra space 
 }
 
 export const findWorkout = (id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`)
+    return fetch(`http://localhost:3000/workouts/${id}`) // no bearer token ? 
 }
 
 export const createWorkout = (data) => {
@@ -73,7 +73,7 @@ export const signInUser = (data) => {
 }
 
 // excercise api's
-
+// these are the same 
 export const indexExcercise = () => {
     return fetch(`http://localhost:3000/excercises`)
 }
@@ -93,7 +93,7 @@ export const createExcercise = (data) => {
         body: JSON.stringify(data)
     })
 }
-
+// would have loved to see a label comment here
 export const addRoutine = (data) => {
     return fetch(`http://localhost:3000/routines`, {
         method: 'POST',

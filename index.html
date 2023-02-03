@@ -32,22 +32,19 @@
         </nav>
     </header>
 
-        <section id="main" >
-            <div id="message-container"></div>
+    <section id="main" > <!-- incorrect indentation -->
+        <div id="message-container"></div><!-- incorrect indentation -->
         <div id="sign-in-container">
-            
             <form id="sign-in-form">
                 <h1 id="sign-in-title">Sign In</h1>
                 <input class="username-sign-in" type="text" name="username" value="username">
                 <input class="password-sign-in" type="text" name="password" value="password">
                 <input id="sign-in-btn" type="submit" value="login"/>
-
                 <div class="em-div">
                     <em class="em">Don't have one? Sign up ➡️ </em>
                 </div>  
             </form>
-        
-            <div id="sign-up-container">
+            <div id="sign-up-container"> <!-- this container is a child of the sing in container, probably a mistake born of indentation issues - could be the source of event bubble grief.-->
                 <h1 id="sign-up-title">Sign Up</h1>
                 <form id="sign-up-form">
                     <input class="username-sign-up" type="text" name="username" value="username">
@@ -56,23 +53,21 @@
                     <input  id="sign-up-btn" type="submit" value="sign up"/>
                 </form>
             </div>
-        </div> 
-
-
+        </div> <!-- this closes the sign-in-container, if the intention was for it to hold both(and i am incorrect in the above comment ) consider naming it something more semantic, like auth-container  -->
         
-    <div id="profile-container">
-        <div id="profile-header"></div>
-        <div id="create-workout-container" class="hidden">
-            <h2>Add a new workout</h2>
-            <form id="create-workout-form">
-                <input type="text" name="workoutName" placeholder="your workout name" >
-                <input id="add-workout-btn" class="btn btn-outline-success" type="submit" value="add workout"/>
-            </form>
+        <div id="profile-container"> <!-- incorrect indentation -->
+            <div id="profile-header"></div>
+            <div id="create-workout-container" class="hidden">
+                <h2>Add a new workout</h2>
+                <form id="create-workout-form">
+                    <input type="text" name="workoutName" placeholder="your workout name" >
+                    <input id="add-workout-btn" class="btn btn-outline-success" type="submit" value="add workout"/>
+                </form>
+            </div>
+            <div id="workout-container">
+                <div class="routine-container"></div>
+            </div>
         </div>
-        <div id="workout-container">
-            <div class="routine-container"></div>
-        </div>
-    </div>
-</section>
+    </section>
 </body>
 </html>
