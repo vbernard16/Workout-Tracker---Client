@@ -25,9 +25,9 @@ import { onSignInSuccess,
         onCreateNewWorkout,
         onCreateNewWorkoutSuccess,
         onDeleteWorkoutSuccess
-         } 
+         } // incorrect spacing 
 from "./ui.js"
-    
+    // lots of unused imports
 
     const messageContainer = document.querySelector('#message-container')
     const signInContainer = document.querySelector('#sign-in-container')
@@ -41,9 +41,9 @@ from "./ui.js"
     const createWorkoutForm = document.querySelector('#create-workout-form')
     const signInBtn = document.querySelector('#sign-in-btn')
     const signUpBtn = document.querySelector('#sign-up-btn')
-
+    // lots of unused cached dom elements
   
-
+// "I find your lack of comments disturbing" ~ James Earl Jones Voice
 signUpContainer.addEventListener('submit', (event) => {
     event.preventDefault()
     const formFieldUsername = event.target.username.value
@@ -77,7 +77,7 @@ signInContainer.addEventListener('submit', (event) => {
             .then((res) => onIndexWorkoutSuccess(res.workout))
 })
 
-
+// inconsistent white space
 
 workoutContainer.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -117,8 +117,3 @@ createWorkoutForm.addEventListener('submit', (event) => {
             onCreateNewWorkoutSuccess(res.workout)
         })
 })
-
-
-
-
-
