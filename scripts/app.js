@@ -2,45 +2,24 @@
 import { indexWorkout,
         signInUser,
         signUpUser,
-        findWorkout,
         createWorkout,
-        updateWorkout,
-        deleteWorkout,
-        indexExcercise,
-        findExcercise,
-        createExcercise,
-        updateRoutine,
         addRoutine,
-        deleteRoutine
     } 
 from "./api.js" 
 
 import { onSignInSuccess,
         onSignUpSuccess,
-        onIndexExcerciseSuccess,
         onIndexWorkoutSuccess,
-        onUpdateRoutineSuccess,
         onAddRoutineSuccess,
-        onFailure,
-        onCreateNewWorkout,
         onCreateNewWorkoutSuccess,
-        onDeleteWorkoutSuccess
          } 
 from "./ui.js"
     
 
-    const messageContainer = document.querySelector('#message-container')
     const signInContainer = document.querySelector('#sign-in-container')
-    const signInForm = document.querySelector('#sign-in-form')
     const signUpContainer = document.querySelector('#sign-up-container')
-    const signUpForm = document.querySelector('#sign-up-form')
-    const profileContainer = document.querySelector('#profile-container')
     const workoutContainer = document.querySelector('#workout-container')
-    const createWorkoutContainer = document.querySelector('#create-workout-container')
-    const excerciseContainer = document.querySelector('#excercise-container')
     const createWorkoutForm = document.querySelector('#create-workout-form')
-    const signInBtn = document.querySelector('#sign-in-btn')
-    const signUpBtn = document.querySelector('#sign-up-btn')
 
   
 
@@ -48,16 +27,13 @@ signUpContainer.addEventListener('submit', (event) => {
     event.preventDefault()
     const formFieldUsername = event.target.username.value
     const formFieldPassword = event.target.password.value
-    const formFieldPasswordConfirmation = event.target.passwordConfirmation.value
     const formattedData = {credentials: {
         username: formFieldUsername,
         password: formFieldPassword,
-        passwordConfirmation: formFieldPasswordConfirmation
     }}
     signUpUser(formattedData)
         .then(res => res.json())
-        .then(onSignUpSuccess)
-    
+        .then(onSignUpSuccess) 
 })
 
 

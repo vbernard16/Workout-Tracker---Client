@@ -48,7 +48,6 @@ export const deleteWorkout = (id) => {
     
 }
 
-// User api's
 
 export const signUpUser = (data) => {
     return fetch(`http://localhost:3000/sign-up`, {
@@ -72,7 +71,6 @@ export const signInUser = (data) => {
     })
 }
 
-// excercise api's
 
 export const indexExcercise = () => {
     return fetch(`http://localhost:3000/excercises`)
@@ -124,7 +122,6 @@ export const deleteRoutine = (id) => {
         headers: {
             'Authorization': `Bearer ${store.userToken}`
         }
-
     })
     
 }

@@ -5,7 +5,6 @@ import { updateRoutine, deleteWorkout, updateWorkout } from "./api.js"
 const profileContainer = document.querySelector('#profile-container')
 const header = document.querySelector('#header')
 const signUpContainer = document.querySelector('#sign-up-container')
-const signInContainer = document.querySelector('#sign-in-container')
 const excerciseContainer = document.querySelector('#excercise-container')
 const workoutContainer = document.querySelector('#workout-container')
 const messageContainer = document.querySelector('#message-container')
@@ -53,6 +52,7 @@ export const onSignUpSuccess = () => {
         <h1>Welcome! Click below to sign into your account</h1>
         <a href="index.html"><button id="sign-in-redirect-btn" type="button">Sign In</button></a>
     `
+
 } 
 
 export const onCreateNewWorkout =(workout) => {
@@ -176,6 +176,8 @@ export const onIndexWorkoutSuccess = (workout) => {
             })
             routineContainer.append(routineDiv)
             workoutDiv.append(routineContainer)
+            // remove line 180 in order for all btn functions to work. It doesn't allow edit-routine function to work
+            workoutHeaderDiv.append(routineContainer)
 
           
         })
