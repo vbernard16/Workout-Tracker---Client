@@ -2,7 +2,7 @@
 import { store } from "./store.js"
 
 export const indexWorkout = () => {
-     return fetch(`http://localhost:3000/workouts`, {
+     return fetch(`https://agile-falls-34596.herokuapp.com/workouts`, {
         headers: {
             'Authorization': `Bearer ${store.userToken}`
         }
@@ -10,11 +10,11 @@ export const indexWorkout = () => {
 }
 
 export const findWorkout = (id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`)
+    return fetch(`https://agile-falls-34596.herokuapp.com/workouts/${id}`)
 }
 
 export const createWorkout = (data) => {
-    return fetch(`http://localhost:3000/workouts`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/workouts`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -26,7 +26,7 @@ export const createWorkout = (data) => {
 }
 
 export const updateWorkout = (data, id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/workouts/${id}`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json',
@@ -38,7 +38,7 @@ export const updateWorkout = (data, id) => {
 }
 
 export const deleteWorkout = (id) => {
-    return fetch(`http://localhost:3000/workouts/${id}`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/workouts/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${store.userToken}`
@@ -50,7 +50,7 @@ export const deleteWorkout = (id) => {
 
 
 export const signUpUser = (data) => {
-    return fetch(`http://localhost:3000/sign-up`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/sign-up`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -61,7 +61,7 @@ export const signUpUser = (data) => {
 }
 
 export const signInUser = (data) => {
-    return fetch(`http://localhost:3000/sign-in`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/sign-in`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -73,15 +73,15 @@ export const signInUser = (data) => {
 
 
 export const indexExcercise = () => {
-    return fetch(`http://localhost:3000/excercises`)
+    return fetch(`https://agile-falls-34596.herokuapp.com/excercises`)
 }
 
 export const findExcercise = () => {
-    return fetch(`http://localhost:3000/excercises`)
+    return fetch(`https://agile-falls-34596.herokuapp.com/excercises`)
 }
 
 export const createExcercise = (data) => {
-    return fetch(`http://localhost:3000/excercises`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/excercises`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -93,7 +93,7 @@ export const createExcercise = (data) => {
 }
 
 export const addRoutine = (data) => {
-    return fetch(`http://localhost:3000/routines`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/routines`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -105,7 +105,7 @@ export const addRoutine = (data) => {
 }
 
 export const updateRoutine = (data, id) => {
-    return fetch(`http://localhost:3000/routines/${id}`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/routines/${id}`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json',
@@ -117,7 +117,7 @@ export const updateRoutine = (data, id) => {
 }
 
 export const deleteRoutine = (id) => {
-    return fetch(`http://localhost:3000/routines/${id}`, {
+    return fetch(`https://agile-falls-34596.herokuapp.com/routines/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${store.userToken}`
